@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  /* background-color: #0b0c10; */
+  /* color: #66FCF1; */
+  min-height: 100vh;
 }
