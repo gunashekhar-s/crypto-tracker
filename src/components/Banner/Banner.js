@@ -57,7 +57,7 @@ const Banner = (props) => {
                 <Carousel />
             </Container>
         </div>
-    );
+    )
 }
 
-export default Banner;
+export default Banner

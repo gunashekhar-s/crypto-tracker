@@ -12,7 +12,9 @@ const store = configureStore()
 store.subscribe(() => {
   console.log("store updated", store.getState())
 })
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
 
   <Provider store={store}>

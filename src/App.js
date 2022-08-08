@@ -18,20 +18,16 @@ function App() {
   const theme = createTheme({
     palette: {
       type: 'light',
-      // primary: {
-      // main: '#66FCF1',
-      //   main: '#FCA311',
-      // },
-      // secondary: {
-      //   main: '#45A29E',
-      // },
-
     }
   })
 
   const currency = useSelector((state) => {
     return state.coinsDetails.currency
   })
+
+  useEffect(() => {
+    document.title = "Crypto Dashboard"
+  }, [])
 
   const dispatch = useDispatch()
   useEffect(() => {

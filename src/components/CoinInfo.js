@@ -24,12 +24,12 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend
-);
+)
 
 const CoinInfo = ({ coin }) => {
-    const [days, setDays] = useState(1);
+    const [days, setDays] = useState(1)
 
-    const theme = useTheme();
+    const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
     const styles = {
@@ -82,6 +82,7 @@ const CoinInfo = ({ coin }) => {
     }, [coin.id, currency.currencyType, days])
 
 
+
     return (
         <div style={styles.container}>
             {historicData.isLoading ? (
@@ -95,12 +96,12 @@ const CoinInfo = ({ coin }) => {
                     <Line
                         data={{
                             labels: historicData.data.prices.map((coin) => {
-                                let date = new Date(coin[0]);
+                                let date = new Date(coin[0])
                                 let time =
                                     date.getHours() > 12
                                         ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                                        : `${date.getHours()}:${date.getMinutes()} AM`;
-                                return days === 1 ? time : date.toLocaleDateString();
+                                        : `${date.getHours()}:${date.getMinutes()} AM`
+                                return days === 1 ? time : date.toLocaleDateString()
                             }),
 
                             datasets: [
@@ -131,7 +132,7 @@ const CoinInfo = ({ coin }) => {
                             <SelectButton
                                 key={day.value}
                                 onClick={() => {
-                                    setDays(day.value);
+                                    setDays(day.value)
                                 }}
                                 selected={day.value === days}
                             >

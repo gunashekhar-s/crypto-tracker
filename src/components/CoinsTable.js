@@ -19,8 +19,8 @@ import { asyncGetAllCoinsData } from "../redux/actions/coinsActions";
 import { numberFormatter } from "./Banner/Carousel";
 
 const CoinsTable = (props) => {
-    const [search, setSearch] = useState("");
-    const [page, setPage] = useState(1);
+    const [search, setSearch] = useState("")
+    const [page, setPage] = useState(1)
     const styles = {
         row: {
             cursor: "pointer",
@@ -49,7 +49,7 @@ const CoinsTable = (props) => {
 
     useEffect(() => {
         dispatch(asyncGetAllCoinsData(currency.currencyType))
-    }, [currency, dispatch]);
+    }, [currency, dispatch])
     const navigate = useNavigate()
 
 
@@ -58,8 +58,8 @@ const CoinsTable = (props) => {
             (coin) =>
                 coin.name.toLowerCase().includes(search) ||
                 coin.symbol.toLowerCase().includes(search)
-        );
-    };
+        )
+    }
 
     return (
         <Container style={{ textAlign: "center" }}>
@@ -100,9 +100,9 @@ const CoinsTable = (props) => {
 
                         <TableBody>
                             {handleSearch()
-                                .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                                .slice((page - 1) * 10, (page * 10))
                                 .map((row) => {
-                                    const profit = row.price_change_percentage_24h > 0;
+                                    const profit = row.price_change_percentage_24h > 0
                                     return (
                                         <TableRow
                                             onClick={() => navigate(`/coins/${row.id}`)}
@@ -161,7 +161,7 @@ const CoinsTable = (props) => {
                                                 M
                                             </TableCell>
                                         </TableRow>
-                                    );
+                                    )
                                 })}
                         </TableBody>
                     </Table>
@@ -178,7 +178,7 @@ const CoinsTable = (props) => {
                 }}
                 sx={{ ul: styles.pagination }}
                 onChange={(_, value) => {
-                    setPage(value);
+                    setPage(value)
                     window.scroll(0, 450)
                 }}
             />

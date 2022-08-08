@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import parse from 'html-react-parser';
 
 const CoinDashboard = (props) => {
-    const { id } = useParams();
+    const { id } = useParams()
     const dispatch = useDispatch()
 
     const currency = useSelector((state) => {
@@ -22,9 +22,9 @@ const CoinDashboard = (props) => {
 
     useEffect(() => {
         dispatch(asyncGetSelectedCoinData(id))
-    }, []);
+    }, [])
 
-    const theme = useTheme();
+    const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
     const styles = {
@@ -88,7 +88,7 @@ const CoinDashboard = (props) => {
     }, [])
 
 
-    if (Object.keys(coin).length === 0) return <LinearProgress style={{ backgroundColor: "darkgray" }} />;
+    if (Object.keys(coin).length === 0) return <LinearProgress style={{ backgroundColor: "darkgray" }} />
 
     return (
         <div style={styles.container}>
@@ -165,7 +165,7 @@ const CoinDashboard = (props) => {
             </div>
             <CoinInfo coin={coin} />
         </div>
-    );
-};
+    )
+}
 
-export default CoinDashboard;
+export default CoinDashboard

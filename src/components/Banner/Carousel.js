@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const numberFormatter = (value) => {
     //formatting number with commas
-    return value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
 const Carousel = (props) => {
@@ -33,7 +33,7 @@ const Carousel = (props) => {
     }
 
     const items = trendingList.coins.map((coin) => {
-        let profit = coin?.price_change_percentage_24h >= 0;
+        let profit = coin?.price_change_percentage_24h >= 0
 
         return (
             <Link style={styles.carouselItem} to={`/coins/${coin.id}`}>
@@ -60,8 +60,8 @@ const Carousel = (props) => {
                     {currency.symbol} {numberFormatter(coin?.current_price.toFixed(2))}
                 </span>
             </Link>
-        );
-    });
+        )
+    })
 
     // items to display per view
     const responsive = {
@@ -71,7 +71,7 @@ const Carousel = (props) => {
         512: {
             items: 4,
         },
-    };
+    }
 
     return (
         <div style={styles.carousel}>
@@ -87,7 +87,7 @@ const Carousel = (props) => {
                 autoPlay
             />
         </div>
-    );
-};
+    )
+}
 
-export default Carousel;
+export default Carousel
