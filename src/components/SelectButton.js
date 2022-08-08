@@ -19,8 +19,6 @@ const SelectButton = ({ children, selected, onClick }) => {
             width: "22%",
         }
     }
-
-
     return (
         <span onClick={onClick} style={styles.selectbutton}>
             {children}

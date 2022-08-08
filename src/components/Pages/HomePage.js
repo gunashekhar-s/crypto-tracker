@@ -5,12 +5,10 @@ import CoinsTable from '../CoinsTable';
 
 function HomePage(props) {
     return (
-
         <>
             <Banner />
             <CoinsTable />
         </>
-
     )
 }
 

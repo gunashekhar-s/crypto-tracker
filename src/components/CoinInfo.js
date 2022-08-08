@@ -67,8 +67,7 @@ const CoinInfo = ({ coin }) => {
             label: "1 Year",
             value: 365,
         },
-    ];
-
+    ]
 
     const historicData = useSelector((state) => {
         return state.coinsDetails.selectedCoin.history
@@ -77,15 +76,10 @@ const CoinInfo = ({ coin }) => {
     const currency = useSelector((state) => {
         return state.coinsDetails.currency
     })
-
-
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(asyncGetSelectedCoinHistory(coin.id, currency.currencyType, days))
-    }, [coin.id, currency.currencyType, days]);
-
-
-
+    }, [coin.id, currency.currencyType, days])
 
 
     return (

@@ -18,15 +18,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncGetAllCoinsData } from "../redux/actions/coinsActions";
 import { numberFormatter } from "./Banner/Carousel";
 
-
 const CoinsTable = (props) => {
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
-
-
     const styles = {
         row: {
-            // backgroundColor: "#16171a",
             cursor: "pointer",
             "&:hover": {
                 backgroundColor: "#131111",
@@ -54,11 +50,7 @@ const CoinsTable = (props) => {
     useEffect(() => {
         dispatch(asyncGetAllCoinsData(currency.currencyType))
     }, [currency, dispatch]);
-    const navigate = useNavigate();
-
-
-
-
+    const navigate = useNavigate()
 
 
     const handleSearch = () => {
@@ -176,7 +168,6 @@ const CoinsTable = (props) => {
                 )}
             </TableContainer>
 
-            {/* Comes from @material-ui/lab */}
             <Pagination
                 count={Number((handleSearch()?.length / 10).toFixed(0))}
                 style={{
@@ -188,7 +179,7 @@ const CoinsTable = (props) => {
                 sx={{ ul: styles.pagination }}
                 onChange={(_, value) => {
                     setPage(value);
-                    window.scroll(0, 450);
+                    window.scroll(0, 450)
                 }}
             />
         </Container>

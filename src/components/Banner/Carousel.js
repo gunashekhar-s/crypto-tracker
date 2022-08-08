@@ -9,16 +9,12 @@ export const numberFormatter = (value) => {
 
 const Carousel = (props) => {
 
-
-
     const trendingList = useSelector((state) => {
         return state.coinsDetails.trendingCoins
     })
     const currency = useSelector((state) => {
         return state.coinsDetails.currency
     })
-
-
 
     const styles = {
         carousel: {
@@ -35,7 +31,6 @@ const Carousel = (props) => {
             color: "white",
         },
     }
-
 
     const items = trendingList.coins.map((coin) => {
         let profit = coin?.price_change_percentage_24h >= 0;

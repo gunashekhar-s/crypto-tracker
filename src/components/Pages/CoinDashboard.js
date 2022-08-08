@@ -30,7 +30,6 @@ const CoinDashboard = (props) => {
     const styles = {
         container: {
             display: "flex",
-
             ...(isMobile && {
                 flexDirection: "column",
                 alignItems: "center",
@@ -54,7 +53,6 @@ const CoinDashboard = (props) => {
         },
         heading: {
             fontWeight: "bold",
-            // marginBottom: 20,
             fontFamily: "Montserrat",
         },
         description: {
